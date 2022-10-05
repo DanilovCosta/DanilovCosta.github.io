@@ -1,0 +1,37 @@
+body {
+  font-family: "Faria Sans", Arial, sans-serif; /*fonte da letra de todo o site*/
+  margin: 0px; /*remove margim pagrão*/
+  color: #141414; /*cor da letra*/
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0px; /*remove margim padrão dos itens*/
+}
+ul {
+  margin: 0px; /*remove margim padrão dos itens*/
+  padding: 0px; /*remove paddim padrão*/
+  list-style: none; /*remove bolinhas da lista*/
+}
+img {
+  max-width: 100%; /*tamanho maximo da imagem mesmo da tela*/
+  height: auto; /*para que não esprema a imagem após colocar tamnhos no html*/
+  display: block; /*faz com que o item seja um bloco*/
+}
+.subtitulo {
+  font-size: 8rem; /*tamanho da letra*/
+  line-height: 1; /*colocar sempre na primeira coluna*/
+  word-break: break-all; /*quebrar a palavra*/
+  text-transform: uppercase; /*colocar em letra maíscula*/
+  line-height: 1; /*altura da linha*/
+  max-width: 4ch; /*espandir até 5 caracteres no maximo*/
+}
+
+@media (max-width: 800px) {
+  .subtitulo {
+    font-size: 3rem; /*tamanho da letra do subtitulo*/
+    text-transform: capitalize; /*somente a primeira letra maiuscula*/
+    max-width: initial !important; /*texto original sem quebra de linha*/
+  }
+}

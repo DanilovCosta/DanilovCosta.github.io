@@ -1,0 +1,63 @@
+.introducao {
+  max-width: 1200px; /*tamanho maximo da pagina*/
+  padding: 40px 20px; /*tamanho da caixa do item*/
+  margin: 0 auto; /*quando a tela for maior do que 1200 centralizar no meio da pagina 0px pra cima e pra baixo e auto para os lados*/
+  display: grid;
+  grid-template-columns: 1fr 2fr; /*criar 3 colunas*/
+  gap: 100px; /*distancia entre os conteudos*/
+  align-items: center; /* alinhar o texto ao centro da imagem*/
+}
+.introducao h1 {
+  font-size: 4.5rem; /*tamanho da fonte 1rem = 16px portanto = 72px*/
+  line-height: 1.125; /*altura da linha, calculo feito valor do font size X 1.125 = 81px*/
+  margin-bottom: 30px; /*margem entre o h1 e o P*/
+  position: relative; /*posição relativa*/
+}
+.introducao h1::before {
+  /*para adicionar um objeto ilustrativo*/
+  content: ""; /*sempre em branco quando adicionar uma imagem*/
+  display: block;
+  width: 130px; /*largura do objeto*/
+  height: 100px; /*altura do objeto */
+  background: url("../img/detalhe.svg") no-repeat center; /*link da imagem, não repetir, alinhar ao centro*/
+  position: absolute; /*posição absoluta sobre o pai introdução h1*/
+  top: -15px; /*distancia do topo h1*/
+  left: -40px; /*distancia para a esquerda sobre o h1*/
+  z-index: -1; /*manter atras do h1*/
+}
+p {
+  font-size: 1.5rem; /*tamanho da letra em rem*/
+  color: #525252; /*cor da letra*/
+}
+
+@media (max-width: 1000px) {
+  /*abaixo de 1000px usar as config abaixo*/
+  .introducao h1 {
+    font-size: 3rem; /*fonte em 3rem*/
+  }
+}
+@media (max-width: 800px) {
+  /*abaixo de 800px usar as config abaixo*/
+  .introducao {
+    grid-template-columns: 1fr 1fr; /*2 colunas iguais*/
+    gap: 40px; /* distancia entre os conteudos*/
+  }
+  .introducao h1 {
+    font-size: 2rem; /*fonte do h1 para 2rem*/
+  }
+  .introducao h1::before {
+    /* modificar o objeto*/
+    width: 30px; /*tamanho de largura*/
+    height: 10px; /*tamanho em altura */
+    left: 0px; /*alinhar a 0px da esquerda*/
+  }
+}
+@media (max-width: 400px) {
+  /* abaixo de 400px usar as config abaixo */
+  .introducao {
+    grid-template-columns: 1fr; /*apenas 1 coluna*/
+  }
+  .introducao img {
+    display: none; /* remover imagem*/
+  }
+}

@@ -1,0 +1,133 @@
+.formacao {
+  background: #141414;
+  color: white;
+}
+.formacao-container {
+  max-width: 1200px; /*Tamanho maximo da pagina em largura*/
+  padding: 120px 20px; /*Tamanho da Caixa do item*/
+  margin: 0 auto; /*margin 0 para cima e para baixo e automatica para os lados*/
+  display: grid;
+  grid-template-columns: 1fr 2fr; /*quantidade de colunas 3 colunas*/
+  gap: 100px; /*distancia entre os objetos*/
+  position: relative; /*para que possa incluir um objeto decorativo no affter*/
+}
+.formacao-container::after {
+  content: ""; /*sempre em branco*/
+  display: block; /*elemento em bloco*/
+  width: 130px; /*largura do item*/
+  height: 100px; /*altura do item*/
+  background: url(../img/detalhe.svg) no-repeat center;
+  position: absolute; /*posicão absoluta sobre o pai*/
+  bottom: -50px;
+  left: 20px;
+}
+.formacao .subtitulo {
+  color: #000000;
+  max-width: 5ch;
+}
+.formacao-texto {
+  font-size: 1.5rem; /*tamanho da letra =24px ou 1.5rem*/
+  line-height: 1.33; /* altura da linha*/
+  max-width: 50ch; /*quantidade maxima de letras por linha*/
+  margin-bottom: 40px; /*distancia entre os blocos*/
+  color: #a3a3a3; /*cor da letra do texto*/
+}
+.formacao-texto strong {
+  color: #ffffff; /*cor da fonte*/
+}
+.faculdade-lista {
+  display: flex; /*sempre que diminuir a pagina quebrar linha*/
+  flex-wrap: wrap;
+  gap: 20px; /*distancia entre os blocos*/
+  margin-bottom: 60px; /*distancia da margem*/
+}
+.faculdade {
+  flex: 1; /*faz com que o conteudo cresã o maximo possivel dentro da caixa*/
+  background: #000000; /* cor do fundo da caixa*/
+  padding: 20px; /*tamanho da caixa*/
+  border-radius: 4px; /*arredondar bordas da caixa*/
+  display: flex; /*para formatar o texto da coluna*/
+  flex-direction: column; /*com essa tag irá aplicar a margin botton dentro da caixa*/
+}
+.faculdade-tipo {
+  font-size: 0.875rem; /*tamanho da fonte*/
+  text-transform: uppercase; /*fonte em negrito*/
+  color: #a3a3a3; /*cor da fonte*/
+  margin-bottom: 10px; /*distancia entre os textos*/
+}
+.faculdade-curso {
+  flex: 1; /*faz com que o conteudo cresã o maximo possivel dentro da caixa*/
+  font-size: 1.125rem; /*taanho da fonte*/
+  line-height: 1.4; /*altura da linha*/
+  margin-bottom: 40px; /*distancia da margem botton*/
+  position: relative; /*posição relativa para alterar os campos abaixo com o before*/
+}
+.faculdade-curso::before {
+  /*inserir objeto decorativo*/
+  content: ""; /*sempre em branco*/
+  display: block; /*display em bloco*/
+  width: 4px; /*largura do item*/
+  height: 20px; /*altura do item*/
+  background: linear-gradient(#b6f829, #67dd0a); /*cor do item*/
+  position: absolute; /*posição absoluta referente ao item acima*/
+  left: -24px;
+}
+.faculdade-instituicao {
+  font-size: 1.125rem; /*tamanho da fonte*/
+  color: #a3a3a3; /*cor da fonte*/
+}
+.cursos {
+  margin-bottom: 60px; /*distancia da margem do botton*/
+}
+.formacao-extra h3 {
+  font-size: 0.875rem; /*tamanho da fonte*/
+  line-height: 1.4; /*altura da linha*/
+  color: #8f8f8f; /*cor da fonte*/
+  text-transform: uppercase; /*fonte em maiusculo*/
+  margin-bottom: 30px; /*distancia da margin do boton */
+  position: relative; /* pois terá que incluir com before uma imagem lateral*/
+}
+.formacao-extra h3::before {
+  content: ""; /*sempre em branco*/
+  display: block; /*display em bloco*/
+  width: 24px; /*largura do item*/
+  height: 24px; /*altura do item*/
+  position: absolute; /*posição absoluta sobre o item h3*/
+  left: -36px; /*distancia para a esquerda para ficar fora da caixa*/
+  top: -4px; /*distancia do topo */
+}
+.cursos h3::before {
+  background: url(../img/cursos.svg) no-repeat center; /*link da imagem*/
+}
+.idiomas h3::before {
+  background: url(../img/idiomas.svg) no-repeat center; /*link da imagem*/
+}
+.formacao-extra li {
+  font-size: 1.125rem; /*tamanho da fonte*/
+  line-height: 1.1; /*altura da linha*/
+  margin-bottom: 20px; /*margem do botton*/
+}
+.formacao-extra span {
+  color: #8f8f8f; /*cor da fonte span*/
+}
+.cursos li {
+  display: flex; /*display flex para alterar dentro da caixa*/
+  justify-content: space-between; /*icones para as margens left e rigth*/
+}
+@media (max-width: 800px) {
+  .formacao-container {
+    grid-template-columns: 1fr;
+    padding: 60px 20px;
+    gap: 40px;
+  }
+  .formacao .subtitulo {
+    color: #ffffff;
+  }
+  .formacao-texto {
+    font-size: 1.25rem;
+  }
+  .formacao-extra h3::before {
+    position: initial;
+    margin-bottom: 10px;
+  }
+}

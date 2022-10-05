@@ -1,0 +1,102 @@
+.experiencia {
+  max-width: 1200px; /*Tamanho maximo da pagina em largura*/
+  padding: 40px 20px; /*Tamanho da Caixa do item*/
+  margin: 0 auto; /*margin 0 para cima e para baixo e automatica para os lados*/
+  display: grid;
+  grid-template-columns: 1fr 2fr; /*quantidade de colunas 3 colunas*/
+  gap: 100px; /*distancia entre os objetos*/
+}
+.experiencia .subtitulo {
+  color: #e0e0e0; /*cor da letra do subtitulo*/
+}
+.experiencia-texto {
+  font-size: 1.5rem; /*tamanho da letra =24px ou 1.5rem*/
+  line-height: 1.33; /* altura da linha*/
+  max-width: 50ch; /*quantidade maxima de letras por linha*/
+  margin-bottom: 60px; /*distancia entre os blocos*/
+  color: #525252; /*cor da letra do texto*/
+}
+.experiencia-texto .strong {
+  color: #141414; /*cor das letras em estrong*/
+}
+.empresa {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /*quantidade de colunas*/
+  gap: 10px 20px; /*distancia de 10px pra cima e para baixo e 20 apra os lados*/
+  padding: 20px; /*tamanho da caixa do item*/
+  background: #f5f5f5; /*cor do fundo da caixa*/
+  margin-bottom: 20px; /*distancia entre as caixas*/
+  border-radius: 4px; /*bordas arredondadas*/
+  position: relative; /*posição relativa para o item abaixo ter posição absoluta*/
+}
+.empresa::before {
+  /*inserir objeto decorativo*/
+  content: ""; /*sempre em branco*/
+  display: block; /*display em bloco*/
+  width: 4px; /*largura do item*/
+  height: 20px; /*altura do item*/
+  background: linear-gradient(#b6f829, #67dd0a); /*cor do item*/
+  position: absolute; /*posição absoluta referente ao item acima*/
+  top: 20px; /* distancia entre o topo*/
+  left: -4px; /*valor negativo para tirar do bloco*/
+}
+.empresa-ano {
+  position: absolute; /* posição absoluta sobre o item empresa*/
+  top: 22px; /*distancia do topo*/
+  left: -100px; /*valor negativo para tirar do bloco*/
+  color: #525252; /* cor da letra*/
+  font-size: 0.875rem; /*tamanho da letra*/
+  text-align: right;
+  width: 80px;
+}
+.empresa-titulo {
+  font-size: 1.125rem; /*tamanho da letra*/
+  line-height: 1.1; /*altura da linha*/
+  font-weight: bold; /*letra em negrito*/
+}
+.empresa-texto {
+  font-size: 0.875rem; /*tamanho da letra*/
+  line-height: 1.4; /* altura da linha*/
+  color: #525252; /*cor da letra*/
+}
+.empresa-habilidades {
+  display: flex; /*criar caixas para as habilidades*/
+  flex-wrap: wrap; /*sempre quebrar quando diminuir a pagina*/
+  gap: 10px; /*distancia entre as caixas*/
+  align-content: start; /*alinhar ao inicio*/
+}
+.empresa-habilidades li {
+  font-size: 0.875rem; /*tamanho da fonte*/
+  line-height: 1.4; /*altura da linha*/
+  border-radius: 4px; /*arredondar as bordas*/
+  background: #ffffff;
+  padding: 5px 10px;
+}
+@media (max-width: 800px) {
+  /*abaixo de 800px terá a configuração a seguir*/
+  .experiencia {
+    grid-template-columns: 1fr; /*quantidade de colunas*/
+    gap: 40px; /*distancia das caixas*/
+  }
+  .experiencia .subtitulo {
+    color: #141414; /*cor da letra*/
+  }
+  .experiencia-texto {
+    font-size: 1.25rem; /*tamanho da letra*/
+  }
+  .empresa-ano {
+    position: initial; /*defini a posição inicial do ano para aparecer nas informações */
+    order: 1; /* colocará o texto no final, desde que não tenha nenhum outro campo com ordem descrito*/
+    width: initial; /*volta a configuração inicial*/
+    text-align: left; /*alinha o texto a esquerda*/
+  }
+  .empresa-ano::before {
+    content: "Ano: "; /* escreve a palavra ano antes do numeral*/
+  }
+}
+@media (max-width: 400px) {
+  /*abaixo de 400px terá apenas 1 coluna em todos os cammpos e blocos*/
+  .empresa {
+    grid-template-columns: 1fr;
+  }
+}
